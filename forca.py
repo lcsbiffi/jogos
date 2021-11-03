@@ -5,9 +5,12 @@ def jogar():
     print("*********************************")
 
     palavra_secreta = "banana"
+    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
 
     acertou = False
     enforcou = False
+
+    print(letras_acertadas)
 
     while(not acertou and not enforcou):
         chute = input("Qual a letra? ")
@@ -16,9 +19,9 @@ def jogar():
         index = 0 # Serve para guardar a posição da letra encontrada
         for letra in palavra_secreta:
             if(chute.upper() == letra.upper()):
-                print("Encontrei a letra {} na posição {}".format (letra, index))
-            index = index + 1    
-        print("Jogando...")
+                letras_acertadas[index] = letra # Como já temos o índice da letra, basta substituir naquela posição do array pela letra que acertamos.
+            index = index + 1 
+        print(letras_acertadas)   
 
     print("Fim de jogo")
 
